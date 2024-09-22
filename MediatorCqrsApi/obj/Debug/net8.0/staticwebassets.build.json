@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "wOywWpgODBAIXt4vGGjsQSfC2GJoxUvsv4FV+FGeWaI=",
+  "Source": "MediatorCqrsApi",
+  "BasePath": "_content/MediatorCqrsApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,16 @@
+C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi.Aplicacao\bin\Debug\net8.0\MediatorCqrsApi.Aplicacao.deps.json
+C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi.Aplicacao\bin\Debug\net8.0\MediatorCqrsApi.Aplicacao.dll
+C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi.Aplicacao\bin\Debug\net8.0\MediatorCqrsApi.Aplicacao.pdb
+C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi.Aplicacao\bin\Debug\net8.0\MediatorCqrsApi.Dominio.dll
+C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi.Aplicacao\bin\Debug\net8.0\MediatorCqrsApi.Dominio.pdb
+C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi.Aplicacao\obj\Debug\net8.0\MediatorCqrsApi.Aplicacao.csproj.AssemblyReference.cache
+C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi.Aplicacao\obj\Debug\net8.0\MediatorCqrsApi.Aplicacao.GeneratedMSBuildEditorConfig.editorconfig
+C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi.Aplicacao\obj\Debug\net8.0\MediatorCqrsApi.Aplicacao.AssemblyInfoInputs.cache
+C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi.Aplicacao\obj\Debug\net8.0\MediatorCqrsApi.Aplicacao.AssemblyInfo.cs
+C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi.Aplicacao\obj\Debug\net8.0\MediatorCqrsApi.Aplicacao.csproj.CoreCompileInputs.cache
+C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi.Aplicacao\obj\Debug\net8.0\MediatorCqrsApi.Aplicacao.sourcelink.json
+C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi.Aplicacao\obj\Debug\net8.0\Mediator.8DC8BDFB.Up2Date
+C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi.Aplicacao\obj\Debug\net8.0\MediatorCqrsApi.Aplicacao.dll
+C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi.Aplicacao\obj\Debug\net8.0\refint\MediatorCqrsApi.Aplicacao.dll
+C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi.Aplicacao\obj\Debug\net8.0\MediatorCqrsApi.Aplicacao.pdb
+C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi.Aplicacao\obj\Debug\net8.0\ref\MediatorCqrsApi.Aplicacao.dll
