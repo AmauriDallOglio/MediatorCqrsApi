@@ -13,16 +13,25 @@ namespace MediatorCqrsApi.Infra.Repositorio
             _databaseContext = databaseContext;
         }
 
-        public Task Save(Notificacao customer)
+        public Task Adicionar(Notificacao notificacao)
         {
-            _databaseContext.NotificacaoCustomerizada.Add(customer);
+            _databaseContext.NotificacaoCustomerizada.Add(notificacao);
             return Task.CompletedTask;
         }
 
-        public Task<Notificacao> Find(Guid id)
+        public Task<Notificacao> ObterPorId(Guid id)
         {
-            var customer = _databaseContext.NotificacaoCustomerizada.FirstOrDefault(a => a.Key.Equals(id));
-            return Task.FromResult(customer);
+            Notificacao notificacao = _databaseContext.NotificacaoCustomerizada.FirstOrDefault(a => a.Id.Equals(id));
+            Console.WriteLine("Notificações: " + notificacao?.ToString()??"");
+            return Task.FromResult(notificacao);
         }
+
+        public Task<List<Notificacao>> ObterTodos()
+        {
+            List<Notificacao> notificacoes = _databaseContext.NotificacaoCustomerizada.ToList();
+            Console.WriteLine("Total de notificações: " + notificacoes.Count);
+            return Task.FromResult(notificacoes);
+        }
+
     }
 }

@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using MediatorCqrsApi.Aplicacao.DML.Notification;
 using MediatorCqrsApi.Dominio.Entidade;
 using MediatorCqrsApi.Dominio.Interface;
 using MediatR;
@@ -12,15 +11,13 @@ namespace MediatorCqrsApi.Aplicacao.DML.Empresas
         //private readonly IMediator _mediator;
         private readonly IEmpresaRepositorio _IEmpresaRepositorio;
         //private readonly IPublishEndpoint _publish;
-        private readonly NotificationContexto _notificationContext;
         private readonly IEmMemoriaRepositorio _IEmMemoriaRepositorio;
-        public EmpresaInserirHandler(IMapper mapper, IEmpresaRepositorio iEmpresaRepositorio, NotificationContexto notificationContext, IEmMemoriaRepositorio emMemoriaRepositorio )
+        public EmpresaInserirHandler(IMapper mapper, IEmpresaRepositorio iEmpresaRepositorio, IEmMemoriaRepositorio emMemoriaRepositorio )
         {
             //_publish = publish;
             _mapper = mapper;
             //_mediator = mediator;
             _IEmpresaRepositorio = iEmpresaRepositorio;
-            _notificationContext = notificationContext;
             _IEmMemoriaRepositorio = emMemoriaRepositorio;
         }
 
@@ -28,24 +25,16 @@ namespace MediatorCqrsApi.Aplicacao.DML.Empresas
         {
 
             Empresa entidade = _mapper.Map<Empresa>(request);
-
-            _IEmpresaRepositorio.Inserir(entidade, true);
-
+            var resultado =  _IEmpresaRepositorio.Inserir(entidade, true);
             EmpresaInserirResponse dto = _mapper.Map<EmpresaInserirResponse>(entidade);
-            //EmpresaInserirResponse dto = new EmpresaInserirResponse();
-            Console.WriteLine($"Empresa cadastrado com sucesso! Código {dto.Id}");
 
-            Aplicacao.DML.Notification.Notification customer = new Aplicacao.DML.Notification.Notification("2", $"Empresa cadastrado com sucesso! Código {dto.Id}");
-            _notificationContext.AddNotification(customer);
+            Console.WriteLine($"Empresa cadastrada com sucesso! Código {dto.Id}");
+            Notificacao notificacao = new Notificacao("2", $"Empresa cadastrada com sucesso! Código {dto.Id}");
 
-            Dominio.Entidade.Notificacao notificacao = new Dominio.Entidade.Notificacao();
+            await _IEmMemoriaRepositorio.Adicionar(notificacao);
+            var todasNotificacoes = await _IEmMemoriaRepositorio.ObterTodos();
 
-             
-
-            var aaaa = _IEmMemoriaRepositorio.Save(notificacao);
-
-            await _IEmMemoriaRepositorio.Save(notificacao);
-
+            // Retorna o DTO da empresa inserida
             return await Task.FromResult(dto);
 
         }

@@ -2,7 +2,13 @@
 {
     public class Notificacao
     {
-        public string Key { get; }
-        public string Message { get; }
+        public string Id { get; }
+        public string Mensagem { get; }
+
+        public Notificacao(string id, string mensagem)
+        {
+            Id = id;
+            Mensagem = mensagem;
+        }
     }
 }

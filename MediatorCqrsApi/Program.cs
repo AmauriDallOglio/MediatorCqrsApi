@@ -1,9 +1,12 @@
-using MediatorCqrsApi.Aplicacao.DML.Notification;
+using FluentValidation;
+using MediatorCqrsApi.Aplicacao.DML.Empresas;
 using MediatorCqrsApi.Aplicacao.Profiles;
 using MediatorCqrsApi.Configuracao;
 using MediatorCqrsApi.Dominio.Interface;
 using MediatorCqrsApi.Infra.Contexto;
 using MediatorCqrsApi.Infra.Repositorio;
+
+using Microsoft.Extensions.DependencyInjection;
 
 namespace MediatorCqrsApi
 {
@@ -19,28 +22,31 @@ namespace MediatorCqrsApi
                 .Build();
 
 
-         
+            builder.Services.AddControllers();
             builder.Services.DbContext(configuration);
             builder.Services.DependenciasDoEntity();
           
             builder.Services.AddMediatR(configuration => configuration.RegisterServicesFromAssemblyContaining(typeof(MapperProfile)));
             builder.Services.AddAutoMapper(typeof(MapperProfile));
+            //builder.Services.AddScoped<IValidator<EmpresaInserirRequest>, EmpresaInserirValidator>();
 
+        
             //builder.Services.AddMediator();
-            builder.Services.AddTransient<EmMemoriaContexto>();
-            builder.Services.AddScoped<IEmMemoriaRepositorio, EmMemoriaRepositorio>();
-            builder.Services.AddScoped<INotificationContexto, NotificationContexto>();
+            builder.Services.AddSingleton<EmMemoriaContexto>();
+            builder.Services.AddSingleton<IEmMemoriaRepositorio, EmMemoriaRepositorio>();
+ 
 
-            builder.Services.AddTransient<NotificationContexto>();
-            builder.Services.AddMvc(options => options.Filters.Add<NotificationFilter>());
+            //builder.Services.AddScoped<INotificationContexto, NotificacaoContexto>();
 
-            builder.Services.AddControllers();
+            //builder.Services.AddTransient<NotificacaoContexto>();
+            //builder.Services.AddMvc(options => options.Filters.Add<NotificacaoFiltro>());
+
+ 
             builder.Services.AddEndpointsApiExplorer();  //import ção do Swagge es e ações definidos na API.
             builder.Services.AddSwaggerGen();
             builder.Services.AddCors(); //permitir um domínio acessem recursos em outro domínio
 
 
-            
 
 
             var app = builder.Build();
