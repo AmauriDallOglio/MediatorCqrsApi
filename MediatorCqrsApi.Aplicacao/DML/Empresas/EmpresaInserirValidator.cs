@@ -20,9 +20,6 @@ namespace MediatorCqrsApi.Aplicacao.DML.Empresas
             //   .WithMessage("O código deve ser um número maior que zero.")
             //   .MaximumLength(50).WithMessage("Referencia não pode exceder 50 caracteres.");
 
-
-
-
             //RuleFor(a => a.Descricao)
             //    .NotEmpty().WithMessage("Referencia é obrigatório.")
             //    .MaximumLength(300).WithMessage("Descricao não pode exceder 300 caracteres.");
