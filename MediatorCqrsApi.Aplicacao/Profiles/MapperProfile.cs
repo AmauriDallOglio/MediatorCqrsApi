@@ -12,8 +12,7 @@ namespace MediatorCqrsApi.Aplicacao.Profiles
             CreateMap<Empresa, EmpresaInserirResponse>().ReverseMap();
 
 
-            //CreateMap<CreateCustomer, CreateCustomerRequest>().ReverseMap();
-            //CreateMap<CreateCustomer, CreateCustomerResponse>().ReverseMap();
+
         }
     }
 

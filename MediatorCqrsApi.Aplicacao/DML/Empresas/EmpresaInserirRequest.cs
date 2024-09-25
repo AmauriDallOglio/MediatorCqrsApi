@@ -2,7 +2,7 @@
 
 namespace MediatorCqrsApi.Aplicacao.DML.Empresas
 {
-    public class EmpresaInserirRequest : IRequest<EmpresaInserirResponse>, INotification
+    public class EmpresaInserirRequest : IRequest<EmpresaInserirResponse>
     {
         public string Referencia { get; set; } = string.Empty;
         public string Descricao { get; set; } = string.Empty;
