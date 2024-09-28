@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "twxAZ1inY6c=",
+  "dgSpecHash": "2HpcIog2fnY=",
   "success": true,
   "projectFilePath": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Infra\\MediatorCqrsApi.Infra.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\amaur\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\amaur\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\amaur\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
     "C:\\Users\\amaur\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\amaur\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\amaur\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",

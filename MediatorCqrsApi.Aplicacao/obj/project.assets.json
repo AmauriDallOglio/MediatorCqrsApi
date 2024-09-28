@@ -508,6 +508,9 @@
       "MediatorCqrsApi.Dominio/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "FluentValidation": "11.5.1"
+        },
         "compile": {
           "bin/placeholder/MediatorCqrsApi.Dominio.dll": {}
         },

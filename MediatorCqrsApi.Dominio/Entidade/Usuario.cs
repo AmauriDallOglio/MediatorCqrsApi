@@ -44,14 +44,14 @@ namespace MediatorCqrsApi.Dominio.Entidade
             return ValidationResult.IsValid;
         }
 
-        private void ValidateName()
+        public void ValidateName()
         {
             RuleFor(c => c.Name)
                 .NotEmpty().WithMessage("Nome não pode estar em branco")
                 .MaximumLength(30).WithMessage("Tamanho máximo é de 10");
         }
 
-        private void ValidateEmail()
+        public void ValidateEmail()
         {
             RuleFor(c => c.Email)
                 .NotEmpty().WithMessage("E-mail não pode estar em branco")

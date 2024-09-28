@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "2KzAoCHWSyo=",
+  "dgSpecHash": "xc7AtC6yyy8=",
   "success": true,
   "projectFilePath": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Dominio\\MediatorCqrsApi.Dominio.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\amaur\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1372,6 +1372,9 @@
         }
       },
       "MediatorCqrsApi.Dominio/1.0.0": {
+        "dependencies": {
+          "FluentValidation": "11.5.1"
+        },
         "runtime": {
           "MediatorCqrsApi.Dominio.dll": {
             "assemblyVersion": "1.0.0",

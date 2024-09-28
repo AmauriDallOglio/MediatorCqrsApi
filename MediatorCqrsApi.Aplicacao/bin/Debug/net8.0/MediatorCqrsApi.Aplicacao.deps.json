@@ -217,6 +217,9 @@
       "System.Diagnostics.DiagnosticSource/8.0.0": {},
       "System.Text.Encodings.Web/4.5.0": {},
       "MediatorCqrsApi.Dominio/1.0.0": {
+        "dependencies": {
+          "FluentValidation": "11.5.1"
+        },
         "runtime": {
           "MediatorCqrsApi.Dominio.dll": {
             "assemblyVersion": "1.0.0",

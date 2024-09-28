@@ -10,3 +10,4 @@ C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi.Dominio\obj\Debug\net8.0\Mediat
 C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi.Dominio\obj\Debug\net8.0\refint\MediatorCqrsApi.Dominio.dll
 C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi.Dominio\obj\Debug\net8.0\MediatorCqrsApi.Dominio.pdb
 C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi.Dominio\obj\Debug\net8.0\ref\MediatorCqrsApi.Dominio.dll
+C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi.Dominio\obj\Debug\net8.0\MediatorCqrsApi.Dominio.csproj.AssemblyReference.cache

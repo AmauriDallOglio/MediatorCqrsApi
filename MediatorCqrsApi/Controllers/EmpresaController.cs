@@ -33,9 +33,9 @@ namespace MediatorCqrsApi.Controllers
         public async Task<IActionResult> Inserir([FromBody] EmpresaInserirRequest request)
         {
             var response = await _mediator.Send(request);
-            if (response == null)
+            if (!response.Sucesso)
             {
-                BadRequest(response);
+                return BadRequest(response);
             }
             return Ok(response);
         }
