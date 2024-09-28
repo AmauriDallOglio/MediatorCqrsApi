@@ -71,19 +71,33 @@
   },
   {
     "ContainingType": "MediatorCqrsApi.Controllers.NotificacaoController",
-    "Method": "Get",
-    "RelativePath": "api/v1/Notificacao/{id}",
+    "Method": "ObterTodas",
+    "RelativePath": "api/v1/Notificacao/ObterTodas",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
+    "Parameters": [],
+    "ReturnTypes": [
       {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
       }
-    ],
-    "ReturnTypes": []
+    ]
   },
   {
     "ContainingType": "MediatorCqrsApi.Controllers.UsuarioController",

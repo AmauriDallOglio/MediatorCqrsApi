@@ -1,12 +1,16 @@
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using MassTransit;
 using MediatorCqrsApi.Aplicacao.DML.Empresas;
+using MediatorCqrsApi.Aplicacao.DML.Notificacoes;
 using MediatorCqrsApi.Aplicacao.Profiles;
+using MediatorCqrsApi.Aplicacao.Util;
 using MediatorCqrsApi.Configuracao;
+using MediatorCqrsApi.Dominio.Entidade;
 using MediatorCqrsApi.Dominio.Interface;
 using MediatorCqrsApi.Infra.Contexto;
 using MediatorCqrsApi.Infra.Repositorio;
-
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
@@ -47,13 +51,36 @@ namespace MediatorCqrsApi
 
 
 
+            // Adiciona o MassTransit
+            builder.Services.AddMassTransit(x =>
+            {
+                x.AddMediator(cfg =>
+                {
+                    // Adiciona seu handler aqui
+                    //cfg.ConfigureMediator(mediator =>
+                    //{
+                    //    mediator.UseConsumer<ObterTodasNotificacaoHandler>(); // Certifique-se de que o handler está configurado corretamente
+                    //});
+                });
+
+                // Configuração do transporte (InMemory)
+                x.UsingInMemory((context, cfg) =>
+                {
+                    cfg.ConfigureEndpoints(context);
+                });
+            });
+
+
+            // Adicione seu repositório e handlers aqui
+            builder.Services.AddScoped<IEmMemoriaRepositorio, EmMemoriaRepositorio>();
+            builder.Services.AddScoped<IRequestHandler<ObterTodasNotificacaoRequest, List<ObterTodasNotificacaoResponse>>, ObterTodasNotificacaoHandler>();
+
+
+
             builder.Services.AddEndpointsApiExplorer();  //import ção do Swagge es e ações definidos na API.
             builder.Services.AddSwaggerGen();
             builder.Services.AddCors(); //permitir um domínio acessem recursos em outro domínio
 
-
-            //builder.Services.AddScoped<IValidator<EmpresaInserirRequest>, EmpresaInserirValidator>();
-      
 
 
             var app = builder.Build();

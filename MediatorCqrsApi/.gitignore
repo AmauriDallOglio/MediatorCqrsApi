@@ -1,51 +1,38 @@
 # Ignore arquivos de build e dependências
 bin/
 obj/
-
-# Visual Studio Code
 .vscode/
-
-# Arquivos de log
 *.log
-
-# Dependências do Node.js
 node_modules/
-
-# Arquivos de ambiente
 .env
-
-# Sistemas operacionais
 .DS_Store
 Thumbs.db
-
 *.sln.docstates
-
-# Arquivos de backup do Visual Studio
 *.sln.ide
-
-# Arquivos de configuração de layout do Visual Studio
 DocumentLayout.json
 DocumentLayout.backup.json
-
-# Excluir a pasta .vs, que contém arquivos temporários do Visual Studio
 .vs/
-
-# Excluir arquivos de saída de compilação
 *.dll
 *.pdb
 *.exe
-
-# Diretórios de referência
 ref/
-
-# Outros arquivos gerados
 *.cache
 *.json
 *.vsix
 *.user
 *.suo
-
-# Assemblies e arquivos de projeto
 *.AssemblyInfo.cs
 *.AssemblyReference.cache
 *.csproj.*
+*.userosscache
+*.db
+*.db-journal
+*.jfm
+loopback://localhost/*
+[Dd]ebug/
+[Rr]elease/
+[xX]64/
+[xX]86/
+[Aa]ssets/
+[Bb]in/
+[Oo]bj/

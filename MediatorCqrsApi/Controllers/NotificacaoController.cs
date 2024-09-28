@@ -1,4 +1,5 @@
 ﻿using MassTransit.Mediator;
+using MediatorCqrsApi.Aplicacao.DML.Notificacoes;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MediatorCqrsApi.Controllers
@@ -14,19 +15,19 @@ namespace MediatorCqrsApi.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet]
-        [Route("{id}")]
-        public async Task<IActionResult> Get(Guid id)
-        {
-            //var customer = await _mediator.Send(new FindCustomer(id));
-            //if (customer is null)
-            //{
-            //    return NotFound();
-            //}
 
-            return Ok(null);
+        [HttpGet("ObterTodas"), ActionName("ObterTodas")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(500)]
+        public async Task<IActionResult> ObterTodas()
+        {
+            var resultado = _mediator.Send(new ObterTodasNotificacaoRequest());
+            return Ok(resultado);
         }
 
-    
+
+ 
+
     }
 }

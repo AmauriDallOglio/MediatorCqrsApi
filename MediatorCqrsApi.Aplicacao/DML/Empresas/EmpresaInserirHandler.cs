@@ -3,7 +3,6 @@ using MediatorCqrsApi.Aplicacao.Util;
 using MediatorCqrsApi.Dominio.Entidade;
 using MediatorCqrsApi.Dominio.Interface;
 using MediatR;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace MediatorCqrsApi.Aplicacao.DML.Empresas
 {
