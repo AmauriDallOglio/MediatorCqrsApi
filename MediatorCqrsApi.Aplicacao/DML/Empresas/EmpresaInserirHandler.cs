@@ -3,6 +3,7 @@ using MediatorCqrsApi.Aplicacao.Util;
 using MediatorCqrsApi.Dominio.Entidade;
 using MediatorCqrsApi.Dominio.Interface;
 using MediatR;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace MediatorCqrsApi.Aplicacao.DML.Empresas
 {
@@ -33,6 +34,13 @@ namespace MediatorCqrsApi.Aplicacao.DML.Empresas
             List<string> resultadoValidacao2 = empresa1.Validar();
             if (resultadoValidacao2.Count > 0)
             {
+         
+                foreach (string erro in resultadoValidacao2)
+                {
+                    Notificacao notificacao2 = new Notificacao("",erro);
+                    _IEmMemoriaRepositorio.Adicionar(notificacao2);
+                }
+ 
                 return (ResultadoOperacao<EmpresaInserirResponse>.AdicionarFalha(resultadoValidacao2));
             }
 
