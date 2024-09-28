@@ -5,10 +5,6 @@ obj/
 # Visual Studio Code
 .vscode/
 
-# Configurações específicas do usuário
-*.user
-*.suo
-
 # Arquivos de log
 *.log
 
@@ -22,38 +18,34 @@ node_modules/
 .DS_Store
 Thumbs.db
 
-*.exe
-
-/bin/
-/obj/
-
-*.suo
 *.sln.docstates
 
-# Excluir a pasta .vs, que contém arquivos temporários do Visual Studio
-.vs/
-
-# Diretórios de compilação
-bin/
-obj/
-
 # Arquivos de backup do Visual Studio
-*.user
-*.suo
 *.sln.ide
 
 # Arquivos de configuração de layout do Visual Studio
 DocumentLayout.json
 DocumentLayout.backup.json
 
-# Excluir dlls e pdbs
+# Excluir a pasta .vs, que contém arquivos temporários do Visual Studio
+.vs/
+
+# Excluir arquivos de saída de compilação
 *.dll
 *.pdb
-
-# Outras extensões que podem ser relevantes
-*.cache
-*.json
-*.vsix
+*.exe
 
 # Diretórios de referência
 ref/
+
+# Outros arquivos gerados
+*.cache
+*.json
+*.vsix
+*.user
+*.suo
+
+# Assemblies e arquivos de projeto
+*.AssemblyInfo.cs
+*.AssemblyReference.cache
+*.csproj.*
