@@ -1,0 +1,36 @@
+# Build results
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# Visual Studio
+.vscode/
+
+# Package managers
+node_modules/
+packages/
+
+# Environment settings
+.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+*.dll
+*.exe
+
+/bin/
+/obj/
+
+*.suo
+*.user
+*.sln.docstates
