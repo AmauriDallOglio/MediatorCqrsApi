@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using FluentValidation.Results;
 using MediatorCqrsApi.Dominio.Util;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace MediatorCqrsApi.Dominio.Entidade
 {
@@ -12,17 +13,21 @@ namespace MediatorCqrsApi.Dominio.Entidade
         public string Email { get; private set; }
 
         public Usuario() { }
-
-        public List<Notificacao> Erros = new List<Notificacao>();
+ 
 
         public Usuario DadosDoIncluir()
         {
-            Erros.AddRange(RegrasValidacao.ValidaString(nameof(Nome), Nome, 5, 50));
-            Erros.AddRange(RegrasValidacao.ValidarEmail(nameof(Email), Email, 5, 40));
-
+ 
             return this;
         }
 
+        public List<Notificacao> Validar()
+        {
+            List<Notificacao> retorno = new List<Notificacao>();
+            retorno.AddRange(RegrasValidacao.ValidaString(nameof(Nome), Nome, 5, 50));
+            retorno.AddRange(RegrasValidacao.ValidarEmail(nameof(Email), Email, 5, 40));
+            return retorno;
+        }
 
 
         //public ValidationResult ValidationResult { get; private set; }

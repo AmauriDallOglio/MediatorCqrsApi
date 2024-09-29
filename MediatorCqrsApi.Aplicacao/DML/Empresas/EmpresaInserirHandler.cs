@@ -20,17 +20,16 @@ namespace MediatorCqrsApi.Aplicacao.DML.Empresas
 
         public async Task<ResultadoOperacao<EmpresaInserirResponse>> Handle(EmpresaInserirRequest request, CancellationToken cancellationToken)
         {
-
-
             Empresa empresa = _mapper.Map<Empresa>(request);
             empresa.DadosDoIncluir();
-            if (empresa.Erros.Count > 0)
+            List<Notificacao> Erros = empresa.Validar();
+            if (Erros.Count > 0)
             {
-                foreach (Notificacao erro in empresa.Erros)
+                foreach (Notificacao erro in Erros)
                 {
                     await _IEmMemoriaRepositorio.Adicionar(erro);
                 }
-                return (ResultadoOperacao<EmpresaInserirResponse>.AdicionarFalha(empresa.Erros));
+                return (ResultadoOperacao<EmpresaInserirResponse>.AdicionarFalha(Erros));
             }
 
             empresa = _IEmpresaRepositorio.Inserir(empresa, true);
@@ -41,10 +40,6 @@ namespace MediatorCqrsApi.Aplicacao.DML.Empresas
 
   
             return (ResultadoOperacao<EmpresaInserirResponse>.AdionarSucesso($"Empresa cadastrada com sucesso! Código {response.Id}"));
-
-
         }
-
-
     }
 }

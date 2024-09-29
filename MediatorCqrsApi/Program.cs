@@ -1,6 +1,8 @@
 using FluentValidation.AspNetCore;
 using MediatorCqrsApi.Aplicacao.Profiles;
 using MediatorCqrsApi.Configuracao;
+using MediatorCqrsApi.Dominio.Entidade;
+using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
 namespace MediatorCqrsApi
@@ -41,7 +43,7 @@ namespace MediatorCqrsApi
             builder.Services.AddEndpointsApiExplorer();  //import ção do Swagge es e ações definidos na API.
             builder.Services.AddSwaggerGen();
             builder.Services.AddCors(); //permitir um domínio acessem recursos em outro domínio
-
+ 
 
             var app = builder.Build();
 

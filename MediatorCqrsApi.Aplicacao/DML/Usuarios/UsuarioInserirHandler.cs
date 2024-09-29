@@ -21,13 +21,14 @@ namespace MediatorCqrsApi.Aplicacao.DML.Usuarios
 
             Usuario usuario = _mapper.Map<Usuario>(request);
             usuario.DadosDoIncluir();
-            if (usuario.Erros.Count > 0)
+            List<Notificacao> Erros = usuario.Validar();
+            if (Erros.Count > 0)
             {
-                foreach (Notificacao erro in usuario.Erros)
+                foreach (Notificacao erro in Erros)
                 {
                     await _IEmMemoriaRepositorio.Adicionar(erro);
                 }
-                return (ResultadoOperacao<UsuarioInserirResponse>.AdicionarFalha(usuario.Erros));
+                return (ResultadoOperacao<UsuarioInserirResponse>.AdicionarFalha(Erros));
 
             }
 

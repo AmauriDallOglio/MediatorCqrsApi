@@ -17,7 +17,7 @@ namespace MediatorCqrsApi.Dominio.Util
             if (!string.IsNullOrEmpty(resultado))
                 erros.Add(new Notificacao().Incluir(nomeCampo, resultado, TipoNotificacao.Erro));
 
-            return erros; // Retorna uma lista de erros, se houver
+            return erros;
         }
 
         public static List<Notificacao> ValidarEmail(string nomeCampo, string valor, int min, int max)
@@ -27,7 +27,7 @@ namespace MediatorCqrsApi.Dominio.Util
             if (!string.IsNullOrEmpty(resultado))
                 erros.Add(new Notificacao().Incluir(nomeCampo, resultado, TipoNotificacao.Erro));
 
-            resultado = CampoObrigatorio(nomeCampo);
+            resultado = TamanhoMinimoMaximoCaracter(nomeCampo, valor, min, max);
             if (!string.IsNullOrEmpty(resultado))
                 erros.Add(new Notificacao().Incluir(nomeCampo, resultado, TipoNotificacao.Erro));
 
@@ -35,11 +35,8 @@ namespace MediatorCqrsApi.Dominio.Util
             if (!string.IsNullOrEmpty(resultado))
                 erros.Add(new Notificacao().Incluir(nomeCampo, resultado, TipoNotificacao.Erro));
 
-            resultado = TamanhoMinimoMaximoCaracter(nomeCampo, valor, min, max);
-            if (!string.IsNullOrEmpty(resultado))
-                erros.Add(new Notificacao().Incluir(nomeCampo, resultado, TipoNotificacao.Erro));
             
-            return erros; // Retorna uma lista de erros, se houver
+            return erros;
         }
 
 

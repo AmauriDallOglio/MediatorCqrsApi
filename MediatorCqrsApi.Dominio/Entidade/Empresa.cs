@@ -1,6 +1,7 @@
 ﻿using MediatorCqrsApi.Dominio.Util;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 
 namespace MediatorCqrsApi.Dominio.Entidade
@@ -12,34 +13,20 @@ namespace MediatorCqrsApi.Dominio.Entidade
         public string Descricao { get; set; } = string.Empty;
         public bool Inativo { get; set; }
 
-        public List<Notificacao> Erros { get; private set; } = new List<Notificacao>();
+
         public Empresa DadosDoIncluir()
         {
-            Erros = RegrasValidacao.ValidaString(nameof(Referencia), Referencia, 5, 50);
-
-
+            Inativo = false;
             return this;
         }
 
-        //public List<string> Validar()
-        //{
-
-
-        //    var retorno = RegrasValidacao.ValidaString(nameof(Referencia), Referencia, 5, 50);
-        //    if (retorno.Any())
-        //    {
-        //        Erros.AddRange(retorno);
-        //        Console.WriteLine(string.Join(", ", retorno));
-        //    }
-
-        //    retorno = RegrasValidacao.ValidarDescricao(nameof(Descricao), Descricao, 5, 300);
-        //    if (retorno.Any())
-        //    {
-        //        Erros.AddRange(retorno);
-        //        Console.WriteLine(string.Join(", ", retorno));
-        //    }
-        //    return Erros;
-        //}
+        public List<Notificacao> Validar()
+        {
+            List<Notificacao> retorno = new List<Notificacao>();
+            retorno.AddRange(RegrasValidacao.ValidaString(nameof(Referencia), Referencia, 5, 50));
+            retorno.AddRange(RegrasValidacao.ValidaString(nameof(Descricao), Referencia, 5, 300));
+            return retorno;
+        }
 
     }
 }

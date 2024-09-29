@@ -1,4 +1,6 @@
 ﻿using FluentValidation;
+using MediatorCqrsApi.Dominio.Entidade;
+using MediatorCqrsApi.Dominio.Interface;
 using MediatorCqrsApi.Dominio.Util;
 using Microsoft.Extensions.Localization;
 
@@ -6,27 +8,36 @@ namespace MediatorCqrsApi.Aplicacao.DML.Empresas
 {
     public class EmpresaInserirValidator : AbstractValidator<EmpresaInserirRequest>
     {
-        public EmpresaInserirValidator(IStringLocalizer<EmpresaInserirValidator> localizer)
+        private readonly IEmMemoriaRepositorio _emMemoriaRepositorio; // Injetando o repositório
+
+        public EmpresaInserirValidator(IStringLocalizer<EmpresaInserirValidator> localizer, IEmMemoriaRepositorio emMemoriaRepositorio)
         {
+            _emMemoriaRepositorio = emMemoriaRepositorio;
+
             RuleFor(x => x.Referencia)
-                .Custom((referencia, context) =>
+                .Custom(async (referencia, context) =>
                 {
-                    var erros = RegrasValidacao.ValidaString("referencia", referencia, 5, 50);
+                    List<Notificacao> erros = RegrasValidacao.ValidaString("referencia", referencia, 5, 50);
                     foreach (var erro in erros)
                     {
                         context.AddFailure(erro.Mensagem);
+                        await _emMemoriaRepositorio.Adicionar(erro);
                     }
                 });
 
             RuleFor(x => x.Descricao)
-                .Custom((descricao, context) =>
+                .Custom(async (descricao, context) =>
                 {
-                    var erros = RegrasValidacao.ValidaString("descricao", descricao, 5, 300);
+                    List<Notificacao> erros = RegrasValidacao.ValidaString("descricao", descricao, 5, 300);
                     foreach (var erro in erros)
                     {
                         context.AddFailure(erro.Mensagem);
+                        await _emMemoriaRepositorio.Adicionar(erro);
                     }
                 });
+
+
+            
 
 
             //// Validação da Referência
