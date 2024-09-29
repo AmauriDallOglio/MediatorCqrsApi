@@ -19,29 +19,37 @@ namespace MediatorCqrsApi.Dominio.Entidade
         //[Required(ErrorMessage = "O campo Inativo é obrigatório. (Entidade)")]
         public bool Inativo { get; set; }
 
+        public List<string> Erros = new List<string>();
 
-        public List<string> Validar()
+        public Empresa Incluir(string referencia, string descricao) 
         {
-            List<string> erros = new List<string>();
+            Referencia = referencia;
+            Descricao = descricao;
+            Erros.AddRange(RegrasValidacao.ValidaString(nameof(Referencia), Referencia, 5, 50));
+            Erros.AddRange(RegrasValidacao.ValidaString(nameof(Descricao), Descricao, 5, 300));
 
-            var retorno = RegrasValidacao.ValidaString(nameof(Referencia), Referencia, 5, 50);
-            if (retorno.Any())
-            {
-                erros.AddRange(retorno);
-                Console.WriteLine(string.Join(", ", retorno));
-            }
-
-            retorno = RegrasValidacao.ValidarDescricao(nameof(Descricao), Descricao, 5, 300);
-            if (retorno.Any())
-            {
-                erros.AddRange(retorno);
-                Console.WriteLine(string.Join(", ", retorno));
-            }
-
-            return erros;
-       
- 
+            return this;
         }
+
+        //public List<string> Validar()
+        //{
+
+
+        //    var retorno = RegrasValidacao.ValidaString(nameof(Referencia), Referencia, 5, 50);
+        //    if (retorno.Any())
+        //    {
+        //        Erros.AddRange(retorno);
+        //        Console.WriteLine(string.Join(", ", retorno));
+        //    }
+
+        //    retorno = RegrasValidacao.ValidarDescricao(nameof(Descricao), Descricao, 5, 300);
+        //    if (retorno.Any())
+        //    {
+        //        Erros.AddRange(retorno);
+        //        Console.WriteLine(string.Join(", ", retorno));
+        //    }
+        //    return Erros;
+        //}
 
     }
 }

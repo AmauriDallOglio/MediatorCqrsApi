@@ -18,18 +18,21 @@ namespace MediatorCqrsApi.Aplicacao.DML.Usuarios
         public async Task<UsuarioInserirResponse> Handle(UsuarioInserirRequest request, CancellationToken cancellationToken)
         {
 
-            Usuario entidade = _mapper.Map<Usuario>(request);
-   
-            if (!entidade.IsValid())
+            Usuario usuario = _mapper.Map<Usuario>(request);
+    
+
+
+            if (!usuario.IsValid())
             {
-                foreach (var error in entidade.ValidationResult.Errors)
+                foreach (var error in usuario.ValidationResult.Errors)
                 {
+              
                     Console.WriteLine($"{error.PropertyName}: {error.ErrorMessage}");
                 }
             }
 
 
-            UsuarioInserirResponse dto = _mapper.Map<UsuarioInserirResponse>(entidade);
+            UsuarioInserirResponse dto = _mapper.Map<UsuarioInserirResponse>(usuario);
 
             // Retorna o DTO da empresa inserida
             return await Task.FromResult(dto);

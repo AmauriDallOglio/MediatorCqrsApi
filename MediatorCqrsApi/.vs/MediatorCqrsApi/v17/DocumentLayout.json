@@ -3,17 +3,10 @@
   "WorkspaceRootPath": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ED27B5DA-D60B-4023-A394-0568E3D7D068}|MediatorCqrsApi.csproj|c:\\amauri\\github\\mediatorcqrsapi\\mediatorcqrsapi\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{ED27B5DA-D60B-4023-A394-0568E3D7D068}|MediatorCqrsApi.csproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{0F29E8EB-034E-4069-BA54-37CC8F73FEB6}|..\\MediatorCqrsApi.Aplicacao\\MediatorCqrsApi.Aplicacao.csproj|c:\\amauri\\github\\mediatorcqrsapi\\mediatorcqrsapi.aplicacao\\dml\\empresas\\empresainserirhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F29E8EB-034E-4069-BA54-37CC8F73FEB6}|..\\MediatorCqrsApi.Aplicacao\\MediatorCqrsApi.Aplicacao.csproj|c:\\amauri\\github\\mediatorcqrsapi\\mediatorcqrsapi.aplicacao\\profiles\\mapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F29E8EB-034E-4069-BA54-37CC8F73FEB6}|..\\MediatorCqrsApi.Aplicacao\\MediatorCqrsApi.Aplicacao.csproj|c:\\amauri\\github\\mediatorcqrsapi\\mediatorcqrsapi.aplicacao\\dml\\usuarios\\usuarioinserirresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F29E8EB-034E-4069-BA54-37CC8F73FEB6}|..\\MediatorCqrsApi.Aplicacao\\MediatorCqrsApi.Aplicacao.csproj|c:\\amauri\\github\\mediatorcqrsapi\\mediatorcqrsapi.aplicacao\\dml\\usuarios\\usuarioinserirrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{08FB96A5-567C-4406-B6EA-E15B47EA1A28}|..\\MediatorCqrsApi.Dominio\\MediatorCqrsApi.Dominio.csproj|c:\\amauri\\github\\mediatorcqrsapi\\mediatorcqrsapi.dominio\\entidade\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0F29E8EB-034E-4069-BA54-37CC8F73FEB6}|..\\MediatorCqrsApi.Aplicacao\\MediatorCqrsApi.Aplicacao.csproj|c:\\amauri\\github\\mediatorcqrsapi\\mediatorcqrsapi.aplicacao\\dml\\usuarios\\usuarioinserirhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -26,7 +19,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 260,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,67 +67,41 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Empresa.cs",
+              "DocumentMoniker": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Dominio\\Entidade\\Empresa.cs",
+              "RelativeDocumentMoniker": "..\\MediatorCqrsApi.Dominio\\Entidade\\Empresa.cs",
+              "ToolTip": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Dominio\\Entidade\\Empresa.cs",
+              "RelativeToolTip": "..\\MediatorCqrsApi.Dominio\\Entidade\\Empresa.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAEwB8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T01:01:41.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": ".gitignore",
-              "DocumentMoniker": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi\\.gitignore",
-              "RelativeDocumentMoniker": ".gitignore",
-              "ToolTip": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi\\.gitignore",
-              "RelativeToolTip": ".gitignore",
-              "ViewState": "AgIAABEBAAAAAAAAAAAkwDgBAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-09-29T00:28:08.002Z",
+              "Title": "EmpresaInserirHandler.cs",
+              "DocumentMoniker": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Aplicacao\\DML\\Empresas\\EmpresaInserirHandler.cs",
+              "RelativeDocumentMoniker": "..\\MediatorCqrsApi.Aplicacao\\DML\\Empresas\\EmpresaInserirHandler.cs",
+              "ToolTip": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Aplicacao\\DML\\Empresas\\EmpresaInserirHandler.cs",
+              "RelativeToolTip": "..\\MediatorCqrsApi.Aplicacao\\DML\\Empresas\\EmpresaInserirHandler.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAewB0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T00:46:08.83Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "UsuarioInserirResponse.cs",
-              "DocumentMoniker": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Aplicacao\\DML\\Usuarios\\UsuarioInserirResponse.cs",
-              "RelativeDocumentMoniker": "..\\MediatorCqrsApi.Aplicacao\\DML\\Usuarios\\UsuarioInserirResponse.cs",
-              "ToolTip": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Aplicacao\\DML\\Usuarios\\UsuarioInserirResponse.cs",
-              "RelativeToolTip": "..\\MediatorCqrsApi.Aplicacao\\DML\\Usuarios\\UsuarioInserirResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-29T00:18:24.361Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UsuarioInserirRequest.cs",
-              "DocumentMoniker": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Aplicacao\\DML\\Usuarios\\UsuarioInserirRequest.cs",
-              "RelativeDocumentMoniker": "..\\MediatorCqrsApi.Aplicacao\\DML\\Usuarios\\UsuarioInserirRequest.cs",
-              "ToolTip": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Aplicacao\\DML\\Usuarios\\UsuarioInserirRequest.cs",
-              "RelativeToolTip": "..\\MediatorCqrsApi.Aplicacao\\DML\\Usuarios\\UsuarioInserirRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-29T00:18:23.52Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "UsuarioInserirHandler.cs",
               "DocumentMoniker": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Aplicacao\\DML\\Usuarios\\UsuarioInserirHandler.cs",
               "RelativeDocumentMoniker": "..\\MediatorCqrsApi.Aplicacao\\DML\\Usuarios\\UsuarioInserirHandler.cs",
               "ToolTip": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Aplicacao\\DML\\Usuarios\\UsuarioInserirHandler.cs",
               "RelativeToolTip": "..\\MediatorCqrsApi.Aplicacao\\DML\\Usuarios\\UsuarioInserirHandler.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAkwBgAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-29T00:18:17.897Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MapperProfile.cs",
-              "DocumentMoniker": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Aplicacao\\Profiles\\MapperProfile.cs",
-              "RelativeDocumentMoniker": "..\\MediatorCqrsApi.Aplicacao\\Profiles\\MapperProfile.cs",
-              "ToolTip": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Aplicacao\\Profiles\\MapperProfile.cs",
-              "RelativeToolTip": "..\\MediatorCqrsApi.Aplicacao\\Profiles\\MapperProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-29T00:18:13.612Z",
+              "WhenOpened": "2024-09-29T00:44:22.075Z",
               "EditorCaption": ""
             }
           ]

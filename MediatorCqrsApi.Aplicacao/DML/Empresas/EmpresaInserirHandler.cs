@@ -22,27 +22,35 @@ namespace MediatorCqrsApi.Aplicacao.DML.Empresas
         {
 
             Empresa empresa1 = new Empresa();
-            List<string> resultadoValidacao2 = empresa1.Validar();
-            if (resultadoValidacao2.Count > 0)
+            empresa1.Incluir(empresa1.Referencia, empresa1.Descricao);
+            foreach (string erro in empresa1.Erros)
             {
-
-                foreach (string erro in resultadoValidacao2)
-                {
-                    Notificacao notificacao2 = new Notificacao("", erro);
-                    _IEmMemoriaRepositorio.Adicionar(notificacao2);
-                }
-
-                return (ResultadoOperacao<EmpresaInserirResponse>.AdicionarFalha(resultadoValidacao2));
+                Notificacao notificacao2 = new Notificacao("", erro);
+                _IEmMemoriaRepositorio.Adicionar(notificacao2);
             }
+
+
+            //List<string> resultadoValidacao2 = empresa1.Validar();
+            //if (resultadoValidacao2.Count > 0)
+            //{
+
+            //    foreach (string erro in resultadoValidacao2)
+            //    {
+            //        Notificacao notificacao2 = new Notificacao("", erro);
+            //        _IEmMemoriaRepositorio.Adicionar(notificacao2);
+            //    }
+
+            //    return (ResultadoOperacao<EmpresaInserirResponse>.AdicionarFalha(resultadoValidacao2));
+            //}
 
             Empresa empresa = _mapper.Map<Empresa>(request);
             empresa = _IEmpresaRepositorio.Inserir(empresa, true);
 
-            List<string> resultadoValidacao = empresa.Validar();  
-            if (resultadoValidacao.Count > 0)
-            {
-                return (ResultadoOperacao<EmpresaInserirResponse>.AdicionarFalha(resultadoValidacao));
-            }
+            //List<string> resultadoValidacao = empresa.Validar();  
+            //if (resultadoValidacao.Count > 0)
+            //{
+            //    return (ResultadoOperacao<EmpresaInserirResponse>.AdicionarFalha(resultadoValidacao));
+            //}
 
            
 

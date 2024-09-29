@@ -11,6 +11,7 @@ namespace MediatorCqrsApi.Dominio.Entidade
         public string Email { get; private set; }
 
         public Usuario() { }
+        public ValidationResult ValidationResult { get; private set; }
 
         public Usuario(string name, string email)
         {
@@ -32,7 +33,6 @@ namespace MediatorCqrsApi.Dominio.Entidade
  
 
 
-        public ValidationResult ValidationResult { get; private set; }
 
         public virtual bool IsValid()
         {
