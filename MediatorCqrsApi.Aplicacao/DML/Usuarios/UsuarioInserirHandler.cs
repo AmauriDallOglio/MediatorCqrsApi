@@ -1,11 +1,12 @@
 ﻿using AutoMapper;
+using MediatorCqrsApi.Aplicacao.Util;
 using MediatorCqrsApi.Dominio.Entidade;
 using MediatorCqrsApi.Dominio.Interface;
 using MediatR;
 
 namespace MediatorCqrsApi.Aplicacao.DML.Usuarios
 {
-    public class UsuarioInserirHandler : IRequestHandler<UsuarioInserirRequest, UsuarioInserirResponse>
+    public class UsuarioInserirHandler : IRequestHandler<UsuarioInserirRequest, ResultadoOperacao<UsuarioInserirResponse>>
     {
         private readonly IMapper _mapper;
         private readonly IEmMemoriaRepositorio _IEmMemoriaRepositorio;
@@ -15,27 +16,29 @@ namespace MediatorCqrsApi.Aplicacao.DML.Usuarios
             _IEmMemoriaRepositorio = emMemoriaRepositorio;
         }
 
-        public async Task<UsuarioInserirResponse> Handle(UsuarioInserirRequest request, CancellationToken cancellationToken)
+        public async Task<ResultadoOperacao<UsuarioInserirResponse>> Handle(UsuarioInserirRequest request, CancellationToken cancellationToken)
         {
 
             Usuario usuario = _mapper.Map<Usuario>(request);
-    
-
-
-            if (!usuario.IsValid())
+            usuario.DadosDoIncluir();
+            if (usuario.Erros.Count > 0)
             {
-                foreach (var error in usuario.ValidationResult.Errors)
+                foreach (Notificacao erro in usuario.Erros)
                 {
-              
-                    Console.WriteLine($"{error.PropertyName}: {error.ErrorMessage}");
+                    await _IEmMemoriaRepositorio.Adicionar(erro);
                 }
+                return (ResultadoOperacao<UsuarioInserirResponse>.AdicionarFalha(usuario.Erros));
+
             }
 
 
-            UsuarioInserirResponse dto = _mapper.Map<UsuarioInserirResponse>(usuario);
+            UsuarioInserirResponse response = _mapper.Map<UsuarioInserirResponse>(usuario);
+            var notificacao = new Notificacao().Incluir("EmpresaInserirHandler", $"Empresa cadastrada com sucesso! Código {response.Id}", TipoNotificacao.Sucesso);
+            await _IEmMemoriaRepositorio.Adicionar(notificacao);
 
-            // Retorna o DTO da empresa inserida
-            return await Task.FromResult(dto);
+
+            return (ResultadoOperacao<UsuarioInserirResponse>.AdionarSucesso($"Empresa cadastrada com sucesso!"));
+
 
         }
     }

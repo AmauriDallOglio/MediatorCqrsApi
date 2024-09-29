@@ -6,10 +6,11 @@
       "AbsoluteMoniker": "D:0:0:{0F29E8EB-034E-4069-BA54-37CC8F73FEB6}|..\\MediatorCqrsApi.Aplicacao\\MediatorCqrsApi.Aplicacao.csproj|c:\\amauri\\github\\mediatorcqrsapi\\mediatorcqrsapi.aplicacao\\dml\\empresas\\empresainserirhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{08FB96A5-567C-4406-B6EA-E15B47EA1A28}|..\\MediatorCqrsApi.Dominio\\MediatorCqrsApi.Dominio.csproj|c:\\amauri\\github\\mediatorcqrsapi\\mediatorcqrsapi.dominio\\entidade\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0F29E8EB-034E-4069-BA54-37CC8F73FEB6}|..\\MediatorCqrsApi.Aplicacao\\MediatorCqrsApi.Aplicacao.csproj|c:\\amauri\\github\\mediatorcqrsapi\\mediatorcqrsapi.aplicacao\\dml\\notificacoes\\obtertodasnotificacaohandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F29E8EB-034E-4069-BA54-37CC8F73FEB6}|..\\MediatorCqrsApi.Aplicacao\\MediatorCqrsApi.Aplicacao.csproj|c:\\amauri\\github\\mediatorcqrsapi\\mediatorcqrsapi.aplicacao\\dml\\usuarios\\usuarioinserirhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ED27B5DA-D60B-4023-A394-0568E3D7D068}|MediatorCqrsApi.csproj|c:\\amauri\\github\\mediatorcqrsapi\\mediatorcqrsapi\\controllers\\notificacaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED27B5DA-D60B-4023-A394-0568E3D7D068}|MediatorCqrsApi.csproj|solutionrelative:controllers\\notificacaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,7 +20,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 260,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -67,41 +68,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Empresa.cs",
-              "DocumentMoniker": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Dominio\\Entidade\\Empresa.cs",
-              "RelativeDocumentMoniker": "..\\MediatorCqrsApi.Dominio\\Entidade\\Empresa.cs",
-              "ToolTip": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Dominio\\Entidade\\Empresa.cs",
-              "RelativeToolTip": "..\\MediatorCqrsApi.Dominio\\Entidade\\Empresa.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAEwB8AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-29T01:01:41.546Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "EmpresaInserirHandler.cs",
               "DocumentMoniker": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Aplicacao\\DML\\Empresas\\EmpresaInserirHandler.cs",
               "RelativeDocumentMoniker": "..\\MediatorCqrsApi.Aplicacao\\DML\\Empresas\\EmpresaInserirHandler.cs",
               "ToolTip": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Aplicacao\\DML\\Empresas\\EmpresaInserirHandler.cs",
               "RelativeToolTip": "..\\MediatorCqrsApi.Aplicacao\\DML\\Empresas\\EmpresaInserirHandler.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAewB0AAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-29T00:46:08.83Z",
+              "WhenOpened": "2024-09-29T15:49:51.348Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ObterTodasNotificacaoHandler.cs",
+              "DocumentMoniker": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Aplicacao\\DML\\Notificacoes\\ObterTodasNotificacaoHandler.cs",
+              "RelativeDocumentMoniker": "..\\MediatorCqrsApi.Aplicacao\\DML\\Notificacoes\\ObterTodasNotificacaoHandler.cs",
+              "ToolTip": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Aplicacao\\DML\\Notificacoes\\ObterTodasNotificacaoHandler.cs",
+              "RelativeToolTip": "..\\MediatorCqrsApi.Aplicacao\\DML\\Notificacoes\\ObterTodasNotificacaoHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T15:49:51.356Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "UsuarioInserirHandler.cs",
-              "DocumentMoniker": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Aplicacao\\DML\\Usuarios\\UsuarioInserirHandler.cs",
-              "RelativeDocumentMoniker": "..\\MediatorCqrsApi.Aplicacao\\DML\\Usuarios\\UsuarioInserirHandler.cs",
-              "ToolTip": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Aplicacao\\DML\\Usuarios\\UsuarioInserirHandler.cs",
-              "RelativeToolTip": "..\\MediatorCqrsApi.Aplicacao\\DML\\Usuarios\\UsuarioInserirHandler.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAkwBgAAAAYAAAAAAAAAA==",
+              "Title": "NotificacaoController.cs",
+              "DocumentMoniker": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi\\Controllers\\NotificacaoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\NotificacaoController.cs",
+              "ToolTip": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi\\Controllers\\NotificacaoController.cs",
+              "RelativeToolTip": "Controllers\\NotificacaoController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB0AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-29T00:44:22.075Z",
+              "WhenOpened": "2024-09-29T15:49:22.212Z",
               "EditorCaption": ""
             }
           ]

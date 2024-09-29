@@ -19,9 +19,9 @@ namespace MediatorCqrsApi.Infra.Repositorio
             return Task.CompletedTask;
         }
 
-        public Task<Notificacao> ObterPorId(Guid id)
+        public Task<Notificacao> ObterPorId(string mensagem)
         {
-            Notificacao notificacao = _databaseContext.NotificacaoCustomerizada.FirstOrDefault(a => a.Id.Equals(id));
+            Notificacao notificacao = _databaseContext.NotificacaoCustomerizada.FirstOrDefault(a => a.Mensagem.Equals(mensagem));
             Console.WriteLine("Notificações: " + notificacao?.ToString()??"");
             return Task.FromResult(notificacao);
         }

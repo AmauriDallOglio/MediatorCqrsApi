@@ -14,7 +14,7 @@ namespace MediatorCqrsApi.Aplicacao.DML.Empresas
                     var erros = RegrasValidacao.ValidaString("referencia", referencia, 5, 50);
                     foreach (var erro in erros)
                     {
-                        context.AddFailure(erro);
+                        context.AddFailure(erro.Mensagem);
                     }
                 });
 
@@ -24,7 +24,7 @@ namespace MediatorCqrsApi.Aplicacao.DML.Empresas
                     var erros = RegrasValidacao.ValidaString("descricao", descricao, 5, 300);
                     foreach (var erro in erros)
                     {
-                        context.AddFailure(erro);
+                        context.AddFailure(erro.Mensagem);
                     }
                 });
 

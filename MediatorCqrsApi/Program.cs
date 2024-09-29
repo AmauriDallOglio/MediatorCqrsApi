@@ -1,12 +1,6 @@
 using FluentValidation.AspNetCore;
-using MassTransit;
-using MediatorCqrsApi.Aplicacao.DML.Notificacoes;
 using MediatorCqrsApi.Aplicacao.Profiles;
-using MediatorCqrsApi.Aplicacao.Util;
 using MediatorCqrsApi.Configuracao;
-using MediatorCqrsApi.Dominio.Interface;
-using MediatorCqrsApi.Infra.Repositorio;
-using MediatR;
 using System.Reflection;
 
 namespace MediatorCqrsApi

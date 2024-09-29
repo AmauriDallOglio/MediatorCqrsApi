@@ -21,48 +21,26 @@ namespace MediatorCqrsApi.Aplicacao.DML.Empresas
         public async Task<ResultadoOperacao<EmpresaInserirResponse>> Handle(EmpresaInserirRequest request, CancellationToken cancellationToken)
         {
 
-            Empresa empresa1 = new Empresa();
-            empresa1.Incluir(empresa1.Referencia, empresa1.Descricao);
-            foreach (string erro in empresa1.Erros)
-            {
-                Notificacao notificacao2 = new Notificacao("", erro);
-                _IEmMemoriaRepositorio.Adicionar(notificacao2);
-            }
-
-
-            //List<string> resultadoValidacao2 = empresa1.Validar();
-            //if (resultadoValidacao2.Count > 0)
-            //{
-
-            //    foreach (string erro in resultadoValidacao2)
-            //    {
-            //        Notificacao notificacao2 = new Notificacao("", erro);
-            //        _IEmMemoriaRepositorio.Adicionar(notificacao2);
-            //    }
-
-            //    return (ResultadoOperacao<EmpresaInserirResponse>.AdicionarFalha(resultadoValidacao2));
-            //}
 
             Empresa empresa = _mapper.Map<Empresa>(request);
+            empresa.DadosDoIncluir();
+            if (empresa.Erros.Count > 0)
+            {
+                foreach (Notificacao erro in empresa.Erros)
+                {
+                    await _IEmMemoriaRepositorio.Adicionar(erro);
+                }
+                return (ResultadoOperacao<EmpresaInserirResponse>.AdicionarFalha(empresa.Erros));
+            }
+
             empresa = _IEmpresaRepositorio.Inserir(empresa, true);
 
-            //List<string> resultadoValidacao = empresa.Validar();  
-            //if (resultadoValidacao.Count > 0)
-            //{
-            //    return (ResultadoOperacao<EmpresaInserirResponse>.AdicionarFalha(resultadoValidacao));
-            //}
-
-           
-
-
-            EmpresaInserirResponse dto = _mapper.Map<EmpresaInserirResponse>(empresa);
-
-     
-            Notificacao notificacao = new Notificacao("2", $"Empresa cadastrada com sucesso! Código {dto.Id}");
+            EmpresaInserirResponse response = _mapper.Map<EmpresaInserirResponse>(empresa);
+            var notificacao = new Notificacao().Incluir("EmpresaInserirHandler", $"Empresa cadastrada com sucesso! Código {response.Id}", TipoNotificacao.Sucesso);
             await _IEmMemoriaRepositorio.Adicionar(notificacao);
 
   
-            return (ResultadoOperacao<EmpresaInserirResponse>.AdionarSucesso($"Empresa cadastrada com sucesso! Código {dto.Id}"));
+            return (ResultadoOperacao<EmpresaInserirResponse>.AdionarSucesso($"Empresa cadastrada com sucesso! Código {response.Id}"));
 
 
         }

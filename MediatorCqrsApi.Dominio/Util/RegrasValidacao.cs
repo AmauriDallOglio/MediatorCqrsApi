@@ -1,44 +1,61 @@
-﻿using System.Drawing;
+﻿using MediatorCqrsApi.Dominio.Entidade;
+using System.Text.RegularExpressions;
 
 namespace MediatorCqrsApi.Dominio.Util
 {
     public static class RegrasValidacao
     {
-        public static List<string> ValidaString(string nomeCampo, string valor, int min, int max)
+        public static List<Notificacao> ValidaString(string nomeCampo, string valor, int min, int max)
         {
-            var erros = new List<string>();
+            List<Notificacao> erros = new List<Notificacao>();
 
             var resultado = NaoPodeSerNuloOuVazio(nomeCampo, valor);
-            if (!string.IsNullOrEmpty(resultado)) erros.Add(resultado);
-
-   
+            if (!string.IsNullOrEmpty(resultado))
+                erros.Add(new Notificacao().Incluir(nomeCampo, resultado, TipoNotificacao.Erro));
 
             resultado = TamanhoMinimoMaximoCaracter(nomeCampo, valor, min, max);
-            if (!string.IsNullOrEmpty(resultado)) erros.Add(resultado);
+            if (!string.IsNullOrEmpty(resultado))
+                erros.Add(new Notificacao().Incluir(nomeCampo, resultado, TipoNotificacao.Erro));
 
             return erros; // Retorna uma lista de erros, se houver
         }
 
-        public static List<string> ValidarDescricao(string nomeCampo, string valor, int min, int max)
+        public static List<Notificacao> ValidarEmail(string nomeCampo, string valor, int min, int max)
         {
-            var erros = new List<string>();
-
+            List<Notificacao> erros = new List<Notificacao>();
             var resultado = NaoPodeSerNuloOuVazio(nomeCampo, valor);
-            if (!string.IsNullOrEmpty(resultado)) erros.Add(resultado);
+            if (!string.IsNullOrEmpty(resultado))
+                erros.Add(new Notificacao().Incluir(nomeCampo, resultado, TipoNotificacao.Erro));
 
             resultado = CampoObrigatorio(nomeCampo);
-            if (!string.IsNullOrEmpty(resultado)) erros.Add(resultado);
+            if (!string.IsNullOrEmpty(resultado))
+                erros.Add(new Notificacao().Incluir(nomeCampo, resultado, TipoNotificacao.Erro));
+
+            resultado = CaracteresDoEmail(nomeCampo, valor);
+            if (!string.IsNullOrEmpty(resultado))
+                erros.Add(new Notificacao().Incluir(nomeCampo, resultado, TipoNotificacao.Erro));
 
             resultado = TamanhoMinimoMaximoCaracter(nomeCampo, valor, min, max);
-            if (!string.IsNullOrEmpty(resultado)) erros.Add(resultado);
-
+            if (!string.IsNullOrEmpty(resultado))
+                erros.Add(new Notificacao().Incluir(nomeCampo, resultado, TipoNotificacao.Erro));
+            
             return erros; // Retorna uma lista de erros, se houver
         }
 
-  
-        public static string ApenasNumeros(string fieldName, string valor)
+
+        private static string CaracteresDoEmail(string fieldName, string valor)
         {
-            if (!System.Text.RegularExpressions.Regex.IsMatch(valor, "^[0-9]+$"))
+            if (!Regex.IsMatch(valor, @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$"))
+            {
+                return $"O campo {fieldName}, inválido!";
+            }
+            return string.Empty;
+        }
+
+
+        private static string ApenasNumeros(string fieldName, string valor)
+        {
+            if (!Regex.IsMatch(valor, "^[0-9]+$"))
             {
                 return $"O campo {fieldName}, deve conter apenas números.";
             }
@@ -55,12 +72,12 @@ namespace MediatorCqrsApi.Dominio.Util
             return string.Empty;
         }
 
- 
-        public static string NumeroMaiorQueZero(string fieldName, string valor)
+
+        private static string NumeroMaiorQueZero(string fieldName, string valor)
         {
             if (!int.TryParse(valor, out var number) || number <= 0)
             {
-                return $"O campo {fieldName}, o código deve ser um número maior que zero.";
+                return $"O campo {fieldName}, deve ser um número maior que zero.";
             }
             return string.Empty;
         }
@@ -70,7 +87,7 @@ namespace MediatorCqrsApi.Dominio.Util
         {
             if (string.IsNullOrWhiteSpace(valor))
             {
-                return $"O campo {fieldName}, o valor não pode ser nulo ou vazio.";
+                return $"O campo {fieldName}, não pode ser nulo ou vazio.";
             }
             return string.Empty;
         }
@@ -96,14 +113,14 @@ namespace MediatorCqrsApi.Dominio.Util
             return string.Empty; // Retorna vazio se estiver dentro dos limites
         }
 
- 
-        public static string CampoObrigatorio(string fieldName)
+
+        private static string CampoObrigatorio(string fieldName)
         {
             return $"O campo {fieldName}, é obrigatório.";
         }
 
-        
-        public static string TamanhoCampo(string fieldName, string value, int min, int max)
+
+        private static string TamanhoCampo(string fieldName, string value, int min, int max)
         {
             
             if (value.Length >= min && value.Length <= max)

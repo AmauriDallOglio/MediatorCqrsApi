@@ -2,13 +2,24 @@
 {
     public class Notificacao
     {
-        public string Id { get; }
-        public string Mensagem { get; }
+        public string Campo { get; private set; }
+        public string Mensagem { get; private set; }
+        public TipoNotificacao Tipo { get; set; }
 
-        public Notificacao(string id, string mensagem)
+        public Notificacao() { }
+
+        public Notificacao Incluir(string campo, string mensagem, TipoNotificacao tipo)
         {
-            Id = id;
+            Campo = campo;
             Mensagem = mensagem;
+            Tipo = tipo;
+            return this;
         }
+    }
+
+    public enum TipoNotificacao
+    {
+        Erro = 0,
+        Sucesso = 1
     }
 }

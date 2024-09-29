@@ -1,5 +1,5 @@
-﻿using MediatorCqrsApi.Aplicacao.DML.Empresas;
-using MediatorCqrsApi.Aplicacao.DML.Notificacoes;
+﻿using MediatorCqrsApi.Aplicacao.DML.Notificacoes;
+using MediatorCqrsApi.Aplicacao.Util;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,7 +24,11 @@ namespace MediatorCqrsApi.Controllers
         [ProducesResponseType(500)]
         public async Task<IActionResult> ObterTodas()
         {
-            var resultado = _mediator.Send(new ObterTodasNotificacaoRequest());
+            ResultadoOperacao<ObterTodasNotificacaoResponse> resultado = await _mediator.Send(new ObterTodasNotificacaoRequest());
+            if (resultado == null)
+            {
+                BadRequest(resultado);
+            }
             return Ok(resultado);
         }
 

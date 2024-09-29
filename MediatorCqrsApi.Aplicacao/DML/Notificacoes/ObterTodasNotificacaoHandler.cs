@@ -19,7 +19,8 @@ namespace MediatorCqrsApi.Aplicacao.DML.Notificacoes
             List<Notificacao> notificacoes = await _repositorio.ObterTodos();
 
             ResultadoOperacao<ObterTodasNotificacaoResponse> retorno = new ResultadoOperacao<ObterTodasNotificacaoResponse>();
-            retorno.Erros.AddRange(notificacoes.Select(a => a.Mensagem));
+            retorno.Notificacoes.AddRange(notificacoes);
+ 
 
 
             return retorno;

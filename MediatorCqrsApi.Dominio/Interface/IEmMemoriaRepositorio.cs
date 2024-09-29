@@ -5,7 +5,7 @@ namespace MediatorCqrsApi.Dominio.Interface
     public interface IEmMemoriaRepositorio
     {
         Task Adicionar(Notificacao notificacao);
-        Task<Notificacao> ObterPorId(Guid id);
+        Task<Notificacao> ObterPorId(string mensagem);
         Task<List<Notificacao>> ObterTodos();
     }
 }
