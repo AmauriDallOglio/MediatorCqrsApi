@@ -1,13 +1,12 @@
-﻿using FluentValidation;
-using FluentValidation.Results;
-using MediatorCqrsApi.Dominio.Util;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿using MediatorCqrsApi.Dominio.Util;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MediatorCqrsApi.Dominio.Entidade
 {
-    public class Usuario : AbstractValidator<Usuario>
+    [Table("Usuario")]
+    public class Usuario : AtributoIdObrigatorio<Guid>, IEmpresaObrigatorio
     {
-     
+        public Guid Id_Empresa { get; set; }
         public int Id { get; set; }
         public string Nome { get; private set; }
         public string Email { get; private set; }

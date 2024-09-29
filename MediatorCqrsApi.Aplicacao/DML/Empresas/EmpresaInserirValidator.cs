@@ -8,7 +8,7 @@ namespace MediatorCqrsApi.Aplicacao.DML.Empresas
 {
     public class EmpresaInserirValidator : AbstractValidator<EmpresaInserirRequest>
     {
-        private readonly IEmMemoriaRepositorio _emMemoriaRepositorio; // Injetando o repositório
+        private readonly IEmMemoriaRepositorio _emMemoriaRepositorio;
 
         public EmpresaInserirValidator(IStringLocalizer<EmpresaInserirValidator> localizer, IEmMemoriaRepositorio emMemoriaRepositorio)
         {
@@ -17,7 +17,7 @@ namespace MediatorCqrsApi.Aplicacao.DML.Empresas
             RuleFor(x => x.Referencia)
                 .Custom(async (referencia, context) =>
                 {
-                    List<Notificacao> erros = RegrasValidacao.ValidaString("referencia", referencia, 5, 50);
+                    List<Notificacao> erros = RegrasValidacao.ValidaString("Referência", referencia, 5, 50);
                     foreach (var erro in erros)
                     {
                         context.AddFailure(erro.Mensagem);
@@ -28,7 +28,7 @@ namespace MediatorCqrsApi.Aplicacao.DML.Empresas
             RuleFor(x => x.Descricao)
                 .Custom(async (descricao, context) =>
                 {
-                    List<Notificacao> erros = RegrasValidacao.ValidaString("descricao", descricao, 5, 300);
+                    List<Notificacao> erros = RegrasValidacao.ValidaString("Descrição", descricao, 5, 300);
                     foreach (var erro in erros)
                     {
                         context.AddFailure(erro.Mensagem);

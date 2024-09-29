@@ -1,6 +1,6 @@
 ﻿using MediatorCqrsApi.Dominio.Entidade;
+using MediatorCqrsApi.Infra.Mapeamento.Configuracao;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Emit;
 
 namespace MediatorCqrsApi.Infra.Contexto
 {
@@ -16,9 +16,15 @@ namespace MediatorCqrsApi.Infra.Contexto
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Auditoria> Auditoria { get; set; }
 
+ 
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-          
+            ConfiguracaoMapeamento.Injetar(modelBuilder);
+     
+
+            base.OnModelCreating(modelBuilder);
         }
+
     }
 }

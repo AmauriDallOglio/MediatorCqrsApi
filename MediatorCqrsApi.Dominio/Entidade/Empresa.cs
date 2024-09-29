@@ -1,7 +1,5 @@
 ﻿using MediatorCqrsApi.Dominio.Util;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
 
 
 namespace MediatorCqrsApi.Dominio.Entidade
@@ -13,6 +11,7 @@ namespace MediatorCqrsApi.Dominio.Entidade
         public string Descricao { get; set; } = string.Empty;
         public bool Inativo { get; set; }
 
+        public Empresa() { }
 
         public Empresa DadosDoIncluir()
         {
