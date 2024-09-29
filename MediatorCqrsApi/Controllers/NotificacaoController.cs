@@ -1,6 +1,8 @@
-﻿using MassTransit.Mediator;
+﻿using MediatorCqrsApi.Aplicacao.DML.Empresas;
 using MediatorCqrsApi.Aplicacao.DML.Notificacoes;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace MediatorCqrsApi.Controllers
 {

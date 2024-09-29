@@ -5,7 +5,7 @@ using MediatR;
 
 namespace MediatorCqrsApi.Aplicacao.DML.Notificacoes
 {
-    public class ObterTodasNotificacaoHandler : IRequestHandler<ObterTodasNotificacaoRequest, List<ObterTodasNotificacaoResponse>>
+    public class ObterTodasNotificacaoHandler : IRequestHandler<ObterTodasNotificacaoRequest, ResultadoOperacao<ObterTodasNotificacaoResponse>>
     {
         private readonly IEmMemoriaRepositorio _repositorio;
 
@@ -14,11 +14,12 @@ namespace MediatorCqrsApi.Aplicacao.DML.Notificacoes
             _repositorio = repositorio;
         }
 
-        public async Task<List<ObterTodasNotificacaoResponse>> Handle(ObterTodasNotificacaoRequest request, CancellationToken cancellationToken)
+        public async Task<ResultadoOperacao<ObterTodasNotificacaoResponse>> Handle(ObterTodasNotificacaoRequest request, CancellationToken cancellationToken)
         {
             List<Notificacao> notificacoes = await _repositorio.ObterTodos();
 
-            List<ObterTodasNotificacaoResponse> retorno = null;
+            ResultadoOperacao<ObterTodasNotificacaoResponse> retorno = new ResultadoOperacao<ObterTodasNotificacaoResponse>();
+            retorno.Erros.AddRange(notificacoes.Select(a => a.Mensagem));
 
 
             return retorno;

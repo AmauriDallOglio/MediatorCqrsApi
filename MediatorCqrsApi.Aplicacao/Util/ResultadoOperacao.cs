@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MediatorCqrsApi.Aplicacao.Util
+﻿namespace MediatorCqrsApi.Aplicacao.Util
 {
- 
+
     public class ResultadoOperacao<T>
     {
         public bool Sucesso { get; set; }
