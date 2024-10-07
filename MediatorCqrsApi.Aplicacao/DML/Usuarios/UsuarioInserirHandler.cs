@@ -34,7 +34,7 @@ namespace MediatorCqrsApi.Aplicacao.DML.Usuarios
 
 
             UsuarioInserirResponse response = _mapper.Map<UsuarioInserirResponse>(usuario);
-            var notificacao = new Notificacao().Incluir("EmpresaInserirHandler", $"Empresa cadastrada com sucesso! Código {response.Id}", TipoNotificacao.Sucesso);
+            Notificacao notificacao = new Notificacao().Incluir("EmpresaInserirHandler", $"Empresa cadastrada com sucesso! Código {response.Id}", TipoNotificacao.Sucesso);
             await _IEmMemoriaRepositorio.Adicionar(notificacao);
 
 
