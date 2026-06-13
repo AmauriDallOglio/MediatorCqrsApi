@@ -3,6 +3,7 @@ using MediatorCqrsApi.Aplicacao.Profiles;
 using MediatorCqrsApi.Configuracao;
 using MediatorCqrsApi.Dominio.Entidade;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System.Reflection;
 
 namespace MediatorCqrsApi
@@ -62,7 +63,17 @@ namespace MediatorCqrsApi
             using (var scope = app.Services.CreateScope())
             {
                 var dbContext = scope.ServiceProvider.GetRequiredService<Infra.Contexto.ContextoGenerico>();
-                dbContext.Database.Migrate();
+                var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+
+                try
+                {
+                    dbContext.Database.Migrate();
+                }
+                catch (Exception ex)
+                {
+                    logger.LogError(ex, "Falha ao aplicar migrações. Verifique se o SQL Server está disponível e se a ConnectionString está correta.");
+                    throw;
+                }
             }
 
             // Configurar a localizacao de idiomas

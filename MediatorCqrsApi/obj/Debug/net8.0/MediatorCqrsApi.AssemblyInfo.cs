@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MediatorCqrsApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d7337b7e68968c21025be0cc5d1b69ff88931cb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1c278732ac5f0f2ddaccd952b8b9cee8fd311cb9")]
 [assembly: System.Reflection.AssemblyProductAttribute("MediatorCqrsApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MediatorCqrsApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

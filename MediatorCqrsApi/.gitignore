@@ -1,4 +1,4 @@
-# Ignore arquivos de build e dependências
+# Ignore arquivos de build e dependï¿½ncias
 bin/
 obj/
 .vscode/
@@ -12,6 +12,7 @@ Thumbs.db
 DocumentLayout.json
 DocumentLayout.backup.json
 .vs/
+# Assemblies gerados pelo build
 *.dll
 *.pdb
 *.exe
