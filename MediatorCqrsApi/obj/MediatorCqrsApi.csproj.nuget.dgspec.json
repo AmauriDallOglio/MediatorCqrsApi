@@ -10,14 +10,14 @@
         "projectUniqueName": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Aplicacao\\MediatorCqrsApi.Aplicacao.csproj",
         "projectName": "MediatorCqrsApi.Aplicacao",
         "projectPath": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Aplicacao\\MediatorCqrsApi.Aplicacao.csproj",
-        "packagesPath": "C:\\Users\\amaur\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\DellG15\\.nuget\\packages\\",
         "outputPath": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Aplicacao\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\amaur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DellG15\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -31,6 +31,7 @@
         },
         "frameworks": {
           "net8.0": {
+            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {
               "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Dominio\\MediatorCqrsApi.Dominio.csproj": {
@@ -48,10 +49,12 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "AutoMapper": {
@@ -107,7 +110,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -117,14 +120,14 @@
         "projectUniqueName": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Dominio\\MediatorCqrsApi.Dominio.csproj",
         "projectName": "MediatorCqrsApi.Dominio",
         "projectPath": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Dominio\\MediatorCqrsApi.Dominio.csproj",
-        "packagesPath": "C:\\Users\\amaur\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\DellG15\\.nuget\\packages\\",
         "outputPath": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\amaur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DellG15\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -138,6 +141,7 @@
         },
         "frameworks": {
           "net8.0": {
+            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {}
           }
@@ -151,10 +155,12 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "FluentValidation": {
@@ -178,7 +184,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -188,14 +194,14 @@
         "projectUniqueName": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Infra\\MediatorCqrsApi.Infra.csproj",
         "projectName": "MediatorCqrsApi.Infra",
         "projectPath": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Infra\\MediatorCqrsApi.Infra.csproj",
-        "packagesPath": "C:\\Users\\amaur\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\DellG15\\.nuget\\packages\\",
         "outputPath": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Infra\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\amaur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DellG15\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -209,6 +215,7 @@
         },
         "frameworks": {
           "net8.0": {
+            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {
               "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Dominio\\MediatorCqrsApi.Dominio.csproj": {
@@ -226,10 +233,12 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
@@ -273,7 +282,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -283,14 +292,14 @@
         "projectUniqueName": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi\\MediatorCqrsApi.csproj",
         "projectName": "MediatorCqrsApi",
         "projectPath": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi\\MediatorCqrsApi.csproj",
-        "packagesPath": "C:\\Users\\amaur\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\DellG15\\.nuget\\packages\\",
         "outputPath": "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\amaur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DellG15\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -304,6 +313,7 @@
         },
         "frameworks": {
           "net8.0": {
+            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {
               "C:\\Amauri\\GitHub\\MediatorCqrsApi\\MediatorCqrsApi.Aplicacao\\MediatorCqrsApi.Aplicacao.csproj": {
@@ -324,10 +334,12 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "Swashbuckle.AspNetCore": {
@@ -354,7 +366,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

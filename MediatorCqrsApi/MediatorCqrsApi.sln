@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.11.35222.181
+# Visual Studio Version 18
+VisualStudioVersion = 18.6.11828.311 oobstable
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatorCqrsApi", "MediatorCqrsApi.csproj", "{ED27B5DA-D60B-4023-A394-0568E3D7D068}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatorCqrsApi.Infra", "..\MediatorCqrsApi.Infra\MediatorCqrsApi.Infra.csproj", "{B5BCE77D-76B0-46C4-82BA-BC114ECA38F2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatorCqrsApi.Dominio", "..\MediatorCqrsApi.Dominio\MediatorCqrsApi.Dominio.csproj", "{08FB96A5-567C-4406-B6EA-E15B47EA1A28}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nucleo", "Nucleo", "{B0299906-2983-44E7-BFA2-91DAE12B7B25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +38,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0F29E8EB-034E-4069-BA54-37CC8F73FEB6} = {B0299906-2983-44E7-BFA2-91DAE12B7B25}
+		{B5BCE77D-76B0-46C4-82BA-BC114ECA38F2} = {B0299906-2983-44E7-BFA2-91DAE12B7B25}
+		{08FB96A5-567C-4406-B6EA-E15B47EA1A28} = {B0299906-2983-44E7-BFA2-91DAE12B7B25}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8F18A361-3E75-4F55-8AA1-0E3EAB9815DA}
