@@ -32,10 +32,10 @@ namespace MediatorCqrsApi.Infra.Migrations
                 name: "Empresa",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "guid", nullable: false),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Referencia = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     Descricao = table.Column<string>(type: "varchar(300)", maxLength: 300, nullable: false),
-                    Inativo = table.Column<bool>(type: "bool", maxLength: 1, nullable: false)
+                    Inativo = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {

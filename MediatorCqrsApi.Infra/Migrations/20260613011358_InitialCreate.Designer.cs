@@ -66,25 +66,24 @@ namespace MediatorCqrsApi.Infra.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("guid")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("Id");
 
                     b.Property<string>("Descricao")
                         .IsRequired()
                         .HasMaxLength(300)
-                        .HasColumnType("varchar")
+                        .HasColumnType("varchar(300)")
                         .HasColumnName("Descricao");
 
                     b.Property<bool>("Inativo")
-                        .HasMaxLength(1)
-                        .HasColumnType("bool")
+                        .HasColumnType("bit")
                         .HasColumnName("Inativo");
 
                     b.Property<string>("Referencia")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .IsUnicode(true)
-                        .HasColumnType("varchar")
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)")
                         .HasColumnName("Referencia");
 
                     b.HasKey("Id");

@@ -10,11 +10,24 @@ namespace MediatorCqrsApi.Infra.Mapeamento
         {
             builder.ToTable("Empresa");
             builder.HasKey(s => s.Id);
-            builder.Property(s => s.Id).HasColumnName("Id").IsRequired().HasColumnType("guid");
+            builder.Property(s => s.Id)
+                .HasColumnName("Id")
+                .IsRequired()
+                .HasColumnType("uniqueidentifier");
 
-            builder.Property(s => s.Referencia).HasColumnName("Referencia").HasColumnType("varchar").HasMaxLength(50).IsRequired(true).IsUnicode(true);
-            builder.Property(s => s.Descricao).HasColumnName("Descricao").HasColumnType("varchar").HasMaxLength(300).IsRequired(true);
-            builder.Property(s => s.Inativo).HasColumnName("Inativo").HasColumnType("bool").HasMaxLength(1).IsRequired(true);
+            builder.Property(s => s.Referencia)
+                .HasColumnName("Referencia")
+                .HasColumnType("varchar(50)")
+                .IsRequired(true)
+                .IsUnicode(false);
+            builder.Property(s => s.Descricao)
+                .HasColumnName("Descricao")
+                .HasColumnType("varchar(300)")
+                .IsRequired(true);
+            builder.Property(s => s.Inativo)
+                .HasColumnName("Inativo")
+                .HasColumnType("bit")
+                .IsRequired(true);
 
 
 
