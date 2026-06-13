@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MediatorCqrsApi.Infra")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+80779611190ed7a9aff272b6e3985e096982dc25")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d7337b7e68968c21025be0cc5d1b69ff88931cb")]
 [assembly: System.Reflection.AssemblyProductAttribute("MediatorCqrsApi.Infra")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MediatorCqrsApi.Infra")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

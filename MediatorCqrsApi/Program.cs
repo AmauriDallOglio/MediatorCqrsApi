@@ -27,7 +27,7 @@ namespace MediatorCqrsApi
             builder.Services.AddAutoMapper(typeof(MapperProfile));
 
 
-            // Configurar os serviços de localização
+            // Configurar os serviï¿½os de localizacao
             builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 
 
@@ -40,9 +40,9 @@ namespace MediatorCqrsApi
                 });
 
 
-            builder.Services.AddEndpointsApiExplorer();  //import ção do Swagge es e ações definidos na API.
+            builder.Services.AddEndpointsApiExplorer();  //importacao do Swagge es e aï¿½ï¿½es definidos na API.
             builder.Services.AddSwaggerGen();
-            builder.Services.AddCors(); //permitir um domínio acessem recursos em outro domínio
+            builder.Services.AddCors(); //permitir um domï¿½nio acessem recursos em outro domï¿½nio
  
 
             var app = builder.Build();
@@ -54,10 +54,18 @@ namespace MediatorCqrsApi
             }
 
             app.UseHttpsRedirection();
+            app.UseAuthentication();
             app.UseAuthorization();
             app.MapControllers();
-            app.UseAuthentication();
-            // Configurar a localização
+
+            // Aplica as migraÃ§Ãµes pendentes automaticamente ao iniciar o sistema.
+            using (var scope = app.Services.CreateScope())
+            {
+                var dbContext = scope.ServiceProvider.GetRequiredService<Infra.Contexto.ContextoGenerico>();
+                dbContext.Database.Migrate();
+            }
+
+            // Configurar a localizacao de idiomas
             var idiomas = new[] { "pt-BR", "en-US" };
             var localizacaoIdioma = new RequestLocalizationOptions()
                 .SetDefaultCulture(idiomas[0])
