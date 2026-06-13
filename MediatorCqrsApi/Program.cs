@@ -2,9 +2,12 @@ using FluentValidation.AspNetCore;
 using MediatorCqrsApi.Aplicacao.Profiles;
 using MediatorCqrsApi.Configuracao;
 using MediatorCqrsApi.Dominio.Entidade;
+using MediatorCqrsApi.Infra.Contexto;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore.Metadata;
 using System.Reflection;
+using System.Text;
 
 namespace MediatorCqrsApi
 {
@@ -14,15 +17,28 @@ namespace MediatorCqrsApi
         {
             WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-            IConfigurationRoot configuration = new ConfigurationBuilder()
-                .SetBasePath(builder.Environment.ContentRootPath)
-                .AddJsonFile("appsettings.json")
-                .Build();
+            var configuration = builder.Configuration;
 
             builder.Services.AddControllers();
-            builder.Services.DbContext(configuration);
+
+            string connectionStringsGravacao = Migracao.ResolveConnectionString(configuration);
+
+            builder.Services.AddDbContext<ContextoGenerico>(options =>
+            {
+                if (!string.IsNullOrWhiteSpace(connectionStringsGravacao))
+                {
+                    options.UseSqlServer(connectionStringsGravacao);
+                }
+                else
+                {
+                    options.UseSqlServer(string.Empty);
+                }
+            });
 
             builder.Services.DependenciasDoEntity();
+
+            bool reinstallDatabase = configuration.GetValue<bool>("Database:ReinstallOnStartup");
+            bool autoMigrate = configuration.GetValue<bool>("Database:AutoMigrate", true);
           
             builder.Services.AddMediatR(configuration => configuration.RegisterServicesFromAssemblyContaining(typeof(MapperProfile)));
             builder.Services.AddAutoMapper(typeof(MapperProfile));
@@ -59,22 +75,7 @@ namespace MediatorCqrsApi
             app.UseAuthorization();
             app.MapControllers();
 
-            // Aplica as migrações pendentes automaticamente ao iniciar o sistema.
-            using (var scope = app.Services.CreateScope())
-            {
-                var dbContext = scope.ServiceProvider.GetRequiredService<Infra.Contexto.ContextoGenerico>();
-                var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
-
-                try
-                {
-                    dbContext.Database.Migrate();
-                }
-                catch (Exception ex)
-                {
-                    logger.LogError(ex, "Falha ao aplicar migrações. Verifique se o SQL Server está disponível e se a ConnectionString está correta.");
-                    throw;
-                }
-            }
+            Migracao.ApplyStartupMigrations(app.Services, configuration, reinstallDatabase, autoMigrate);
 
             // Configurar a localizacao de idiomas
             var idiomas = new[] { "pt-BR", "en-US" };
@@ -87,5 +88,6 @@ namespace MediatorCqrsApi
 
             app.Run();
         }
+
     }
 }

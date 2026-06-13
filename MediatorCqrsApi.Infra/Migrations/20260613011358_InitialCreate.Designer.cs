@@ -93,11 +93,9 @@ namespace MediatorCqrsApi.Infra.Migrations
 
             modelBuilder.Entity("MediatorCqrsApi.Dominio.Entidade.Usuario", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Email")
                         .IsRequired()

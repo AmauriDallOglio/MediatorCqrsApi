@@ -7,9 +7,8 @@ namespace MediatorCqrsApi.Dominio.Entidade
     public class Usuario : AtributoIdObrigatorio<Guid>, IEmpresaObrigatorio
     {
         public Guid Id_Empresa { get; set; }
-        public int Id { get; set; }
-        public string Nome { get; private set; }
-        public string Email { get; private set; }
+        public string Nome { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
 
         public Usuario() { }
  
