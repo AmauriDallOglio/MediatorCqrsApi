@@ -73,11 +73,6 @@ C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi\obj\Debug\net8.0\MediatorCqrsAp
 C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi\obj\Debug\net8.0\MediatorCqrsApi.sourcelink.json
 C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi\obj\Debug\net8.0\staticwebassets.build.json
 C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi\obj\Debug\net8.0\staticwebassets.development.json
-C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi\obj\Debug\net8.0\staticwebassets\msbuild.MediatorCqrsApi.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi\obj\Debug\net8.0\staticwebassets\msbuild.build.MediatorCqrsApi.props
-C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.MediatorCqrsApi.props
-C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.MediatorCqrsApi.props
-C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi\obj\Debug\net8.0\scopedcss\bundle\MediatorCqrsApi.styles.css
 C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi\obj\Debug\net8.0\Mediator.D600159D.Up2Date
 C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi\obj\Debug\net8.0\MediatorCqrsApi.dll
@@ -87,3 +82,12 @@ C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi\obj\Debug\net8.0\MediatorCqrsAp
 C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi\obj\Debug\net8.0\ref\MediatorCqrsApi.dll
 C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
 C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi\bin\Debug\net8.0\MediatorCqrsApi.staticwebassets.endpoints.json
+C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi\obj\Debug\net8.0\swae.build.ex.cache
+C:\Amauri\GitHub\MediatorCqrsApi\MediatorCqrsApi\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
